@@ -1,0 +1,26 @@
+# Autore : Sessa Antonio 0622702305, a.sessa108@studenti.unisa.it
+# Canale IZ
+# Professore : Giuseppe D'Aniello gidaniello@unisa.it
+
+
+# Inserire il dataset (wordlcup1.csv) nella cartella data (dove è montato il volume)
+# Inserire il jar nella cartella data (dove è montato il volume)
+# Eseguire i seguenti comandi all'interno della bash del nodo master (trovandomi nella cartella dove ho inserito il jar e i dati)
+
+# avviare HADOOP e YARN se non sono già avviati
+$HADOOP_HOME/sbin/start-dfs.sh
+$HADOOP_HOME/sbin/start-yarn.sh
+
+# Inserisco il dataset nel dfs
+hdfs dfs -put worldcup1.csv /dataset
+
+# Lancio Hadoop jar
+# sostituire $0 con le iniziali di una nazione e.g ITA
+hadoop jar FinalProject.jar /dataset /refereeIndex $0
+
+# Prendo dal dfs il risultato di hadoop
+hdfs dfs -get /refereeIndex 
+
+# Pulizia del dfs (cancello il dataset e il risultato di Hadoop)
+hdfs dfs -rm -r /refereeIndex
+hdfs dfs -rm /dataset

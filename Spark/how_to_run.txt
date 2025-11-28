@@ -1,0 +1,11 @@
+# Autore : Sessa Antonio 0622702305, a.sessa108@studenti.unisa.it
+# Canale IZ
+# Professore : Giuseppe D'Aniello gidaniello@unisa.it
+
+1. Inserire il jar SparkWorldCupStats.jar, la cartella input, i due eseguibili
+shell launch cluster.sh e launch single.sh nella cartella (nelle mie prove ho testato solo la cartella testfiles dove è montato il volume).
+2. Se si vogliono cambiare i parametri di ingresso, modificando gli eseguibili
+shell, l’usage del programma e' il seguente: Cartella che contiene il csv da
+processare, X, Y.
+3. Eseguire uno dei due eseguibili shell.
+4. Il risultato verrà stampato a video
